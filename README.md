@@ -1,1 +1,1 @@
-# crickfun - The Best Place for IPL Lover
+# crickfun - The Best Place for all IPL Lovers
