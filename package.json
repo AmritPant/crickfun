@@ -1,0 +1,20 @@
+{
+  "name": "crickfun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmritPant/crickfun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmritPant/crickfun/issues"
+  },
+  "homepage": "https://github.com/AmritPant/crickfun#readme"
+}
