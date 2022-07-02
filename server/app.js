@@ -1,13 +1,19 @@
 const express = require("express");
 const morgan = require("morgan");
 
+const teamRouter = require('./routes/teamRoute');
+const playerRouter = require('./routes/playerRoute');
+
 const app = express();
 
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.send("<h1> Hello </h1>");
-});
+app.use('/url/api/v1', teamRouter)
+app.use('/url/api/v1', playerRouter)
+
+// app.get("/", (req, res) => {
+//   res.send("<h1> Hello </h1>");
+// });
 
 module.exports = app;
