@@ -1,5 +1,11 @@
 const express = require("express");
+const playerController = require('../controllers/player.controller')
+
 
 const playerRouter = express.Router();
 
-// playerRouter.Route('')
+playerRouter.get('/GetAllPlayers', playerController.getAllPlayers);
+
+module.exports = playerRouter
+
+
