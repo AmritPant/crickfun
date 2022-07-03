@@ -8,7 +8,7 @@ playerRouter
   .get(playerController.getAllPlayers)
   .post(playerController.addNewPlayer);
 
-// playerRouter.get("/player", playerController.getAllPlayers);
-// playerRouter.post("/AddNewPlayer", playerController.addNewPlayer);
+playerRouter.route('/players/:playerId').get(playerController.getOnePlayer);
+playerRouter.get('/search', playerController.searchPlayer);
 
 module.exports = playerRouter;
