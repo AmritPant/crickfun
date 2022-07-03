@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDatabase = async function () {
+  console.log(process.env)
   const MONGO_PASSWORD = process.env.MONGODB_ATLAS_PASSWORD;
   const MONGO_USERNAME = process.env.MONGODB_USER;
   const TEMP_MONGO_URI = process.env.MONGODB_ATLAS_URI;
