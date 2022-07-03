@@ -1,17 +1,5 @@
 const mongoose = require("mongoose");
 
-const player = [
-  {
-    id: 0,
-    name: "Dhoni",
-  },
-
-  {
-    id: 1,
-    name: "Rishabh Pant",
-  },
-];
-
 const PlayerSchema = new mongoose.Schema({
   name: {
     type: String,
