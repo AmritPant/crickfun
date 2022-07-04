@@ -1,15 +1,20 @@
 const Player = require('../models/player.model.js');
 
+//////////////////////////////////////////////////////////////////////
+//  GETTING ALL PLAYERS
 async function getAllPlayers(req, res) {
   const playersData = await Player.find({});
   res.send(playersData);
 }
 
+//////////////////////////////////////////////////////////////////////
+//  ADDING  NEW PLAYERS
 async function addNewPlayer(req, res) {
   const playerData = await Player.create(req.body.data);
   res.status(201).json(playerData);
 }
-
+//////////////////////////////////////////////////////////////////////
+//  GETTING ONE PLAYER
 async function getOnePlayer(req, res) {
   const { playerId } = req.params;
   const curPlayer = await Player.findOne({ _id: playerId });
@@ -21,6 +26,8 @@ async function getOnePlayer(req, res) {
   res.status(200).json({ status: 'success', data: curPlayer });
 }
 
+//////////////////////////////////////////////////////////////////////
+//  SEARCHING FOR A PLAYER
 async function searchPlayer(req, res) {
   const { player_name } = req.query;
 
@@ -36,6 +43,9 @@ async function searchPlayer(req, res) {
   res.status(200).json(playerData);
 }
 
+///////////////////////////////////////////////////////////
+////////////////////////  EXPORTS ////////////////////////
+/////////////////////////////////////////////////////////
 module.exports = {
   getAllPlayers,
   addNewPlayer,
