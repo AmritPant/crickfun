@@ -27,10 +27,7 @@ async function addNewTeam(req, res) {
       .json({ status: 'failed', message: 'Incorrect Data' });
 
   //  Removing all the unessary Data from the User about Players
-  newTeam.players = [];
-  newTeam.batsman = [];
-  newTeam.bowlers = [];
-  newTeam.all_rounder = [];
+  newTeam.players = newTeam.batsman = newTeam.bowler = newTeam.all_rounder = [];
 
   try {
     // Fetching all the Players Data
@@ -39,9 +36,12 @@ async function addNewTeam(req, res) {
     allPlayers.forEach((player) => {
       // Putting the Players according to the team
       if (player.team === newTeam.teamName) newTeam.players.push(player);
-      if (player.role === 'batsman') newTeam.batsman.push(player);
-      if (player.role === 'bowlers') newTeam.bowlers.push(player);
-      if (player.role === 'all_rounder') newTeam.all_rounder.push(player);
+      if (player.role === 'batsman' && player.team === newTeam.teamName)
+        newTeam.batsman.push(player);
+      if (player.role === 'bowlers' && player.team === newTeam.teamName)
+        newTeam.bowlers.push(player);
+      if (player.role === 'all_rounder' && player.team === newTeam.teamName)
+        newTeam.all_rounder.push(player);
     });
 
     // Upersting the Team Dataj
